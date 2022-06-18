@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://unpkg.com/axios@0.27.2/dist/axios.min.js"></script>
+    <script src="./await-to-myxuanjs.js"></script>
+    <script>
+        (async () => {
+            let [val] = await to(axios.get('http://localhost:9000/hobby'), '错误了')
+            let [myVal] = await to(axios.get('http://localhost:9000/love'), '发生了错误')
+            let [meVal] = await to(axios.get('http://localhost:9000/go'), '发生了错误')
+            console.log('val', val);
+            console.log('myVal', myVal)
+            console.log('meVal', meVal)
+        })()
+    </script>
+</body>
+
+</html>
